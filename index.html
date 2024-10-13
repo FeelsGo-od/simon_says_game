@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Soldier's Memory & Attention game</title>
+</head>
+<body>
+    <header class="flex-center">
+        <h1>Soldier's Memory & Attention game</h1>
+        <div id="points" class="flex-center">
+            <span id="users_points">0</span> Points
+        </div>
+    </header>
+    <main>
+        <div class="top">
+            <div class="show-info">
+                <div class="buttons">
+                    <button class="black-btn" id="show_info_btn">Show rules of the game: ⭥</button>
+                    <button class="green-btn" id="play_btn">Play</button>
+                </div>
+                <div class="info" id="info">
+                    <p>1. You get one sentence (then two, three etc).</p>
+                    <p>2. The countdown starts and you should try to remember the sentence</p>
+                    <p>
+                        3. When countdown ends, the sentence will be hidden and you'll see an input where 
+                        You will write a sentence you remembered. 
+                    </p>
+                    <p>4. By clicking on submit button You'll see this sentence again. </p>
+                    <p>5. Check how many mistakes you made, write that 
+                        amount into 'mistakes field'. </p>
+                    <p>6. You'll get more points for less mistakes - points are shown at the top-left corner.</p>
+                    <p> Have fun and focus!</p>
+                </div>
+            </div>
+        </div>
+        <div class="playground" id="playground">
+            <div class="show-sentence" id="show_sentence">
+                <div class="countdown" id="countdown">
+                    
+                </div>
+                <p class="sentence" id="sentence">
+                    Some random sentence.
+                </p>
+                <div class="mistakes-counter" id="mistakes_counter">
+                    <p id="submitted_sentence" class="submitted-sentence">You wrote: </p>
+                    <p>How many mistakes in a meaning you did?</p>
+                    <p class="small-description">(If you used synonyms, then it's not a mistake, or so-called Fragment Error)</p>
+                    <input id="mistakes_amount" type="number" placeholder="0">
+                    <button id="submit_mistakes">Submit</button>
+                </div>
+            </div>
+            <div class="write-sentence" id="write_sentence">
+                <p>Write what you remembered here: (and click Enter) </p>
+                <textarea class="users-sentence" id="users_sentence" rows="6" cols="40" placeholder="Your sentence"></textarea>
+                <br>
+                <button id="submit_sentence">Submit</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        All rights reserved.
+        Made by <a href="">Andrew</a>.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
