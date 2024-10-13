@@ -111,7 +111,7 @@ main {
     min-height: 100vh;
     border: 2px solid black;
     background: #fff;
-    padding: 12px 14px 14px 14px;
+    padding: 12px 14px 0 14px;
     display: flex; 
     flex-direction: column;
 }
