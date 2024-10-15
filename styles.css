@@ -140,13 +140,18 @@ main {
 }
 
 .top .info p {
-    display: inline;
+    display: inline-block;
     line-height: 0;
+    position: relative;
+    height: 0;
+    z-index: -999;
 }
 
 .top .info.info-visible p {
     display: block;
     line-height: 29px;
+    height: unset;
+    z-index: unset;
 }
 
 .top p {
@@ -164,6 +169,7 @@ main {
     flex-grow: 0.8;
     margin-top: 20px;
     border: 2px solid black;
+    z-index: 9999;
 }
 
 .show-sentence .submitted-sentence {
@@ -221,8 +227,5 @@ footer {
     }
     .playground .countdown {
         font-size: 36px;
-    }
-    .playground .users-sentence {
-        font-size: 12px;
     }
 }
