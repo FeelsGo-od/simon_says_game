@@ -342,6 +342,8 @@ play_btn.addEventListener('click', () => {
     playground.style.background = 'none';
     endgame.textContent = '';
     endgame.style.display = 'none';
+    users_sentence.value = '';
+    mistakes_amount.value = 0;
     // GET A RANDOM SENTENCE
     let randomSentence = Math.floor(Math.random() * levelOne.length);
     sentence.textContent = levelOne[randomSentence];
@@ -386,7 +388,7 @@ users_sentence.addEventListener('keypress', (e) =>  {
     }
 })
 
-// *** SUBMIT MISTAKES AMOUNT USER DID ***
+// *** SUBMITTING MISTAKES-AMOUNT USER DID ***
 let amount = 0;
 submit_mistakes.addEventListener('click', () => {
     if(mistakes_amount.value == 0) amount+=1000;
