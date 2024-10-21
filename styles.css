@@ -24,7 +24,7 @@ input {
     font-family: monospace, sans-serif;
 }
 
-header, main, footer {
+.ad, header, main, footer {
     width: 70%;
     margin: 0 auto;
 }
@@ -90,6 +90,35 @@ header, main, footer {
 
 .small-description {
     font-size: 16px;
+}
+
+/* AD */
+.ad {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.ad .title {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: monospace, sans-serif;
+    display: inline-block;
+    padding: 20px;
+    background: #000;
+    color:  rgb(241, 241, 241);
+    cursor: pointer;
+    opacity: 0.99;
+}
+
+.ad .title:hover {
+    background: rgba(3, 3, 3, 0.849);
+}
+
+.ad .descr {
+    font-size: 20px;
+    font-family: monospace, sans-serif;
+    border-bottom: 2px solid black;
 }
 
 /* HEADER */
@@ -183,6 +212,11 @@ main {
     padding: 14px;
 }
 
+.show-word input, .show-sentence button {
+    display: none;
+    margin-bottom: 5px;
+}
+
 .playground .countdown {
     font-size: 40px;
 }
@@ -224,6 +258,12 @@ footer {
     }
     .small-description {
         font-size: 12px;
+    }
+    .ad .title {
+        font-size: 16px;
+    }
+    .ad .descr {
+        font-size: 14px;
     }
     .playground .countdown {
         font-size: 36px;

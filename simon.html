@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Soldier's Memory & Attention game</title>
+    <title>Simon Says with words game online</title>
 </head>
 <body>
     <div class="ad">
-        <a href="simon.html">
+        <a href="index.html">
             <span class="title green-btn">Play another game</span>
         </a>
-        <span class="descr"> Simon Says(n-back) with words!</span>
+        <span class="descr"> Soldier's memory - remember orders on time!</span>
     </div>
     <header class="flex-center">
-        <h1>Soldier's Memory & Attention game</h1>
+        <h1>Simon Says with words - Memory game</h1>
         <div id="points" class="flex-center">
             <span id="users_points">0</span> Points
         </div>
@@ -27,26 +27,24 @@
                     <button class="green-btn" id="play_btn">Play</button>
                 </div>
                 <div class="info" id="info">
-                    <p>1. You get one sentence (then two, three etc).</p>
-                    <p>2. The countdown starts and you should try to remember the sentence</p>
+                    <p>1. You get new words, until you make a mistake or the time ends.</p>
+                    <p>2. Everytime you get a new word, you should write all the previous words *separated with commas* with the current one as well and click on Submit or press Enter.</p>
                     <p>
-                        3. When countdown ends, the sentence will be hidden and you'll see an input where 
-                        You will write a sentence you remembered. 
+                        3. If you make a mistake the game stops and you get points.
                     </p>
-                    <p>4. By clicking on submit button You'll see this sentence again. </p>
-                    <p>5. Check how many mistakes you made, write that 
-                        amount into 'mistakes field'. </p>
-                    <p>6. You'll get more points for less mistakes - points are shown at the top of this page.</p>
-                    <p> Have fun and focus!</p>
+                    <p>4. Then, you can play a new game. </p>
+                    <p> Have fun and remember!</p>
                 </div>
             </div>
         </div>
         <div class="playground" id="playground">
-            <div class="show-sentence" id="show_sentence">
+            <div class="show-sentence show-word" id="show_sentence">
                 <div class="countdown" id="countdown"></div>
-                <p class="sentence" id="sentence">
-                    Some random sentence.
+                <p class="sentence" id="simon_word">
+                    word
                 </p>
+                <input type="text" id="simon_input" placeholder="Write word">
+                <button id="simon_submit">Submit</button>
                 <div class="mistakes-counter" id="mistakes_counter">
                     <p id="submitted_sentence" class="submitted-sentence">You wrote: </p>
                     <p>How many mistakes in a meaning you did?</p>
@@ -70,6 +68,6 @@
     </footer>
 
     <script src="scripts/main.js"></script>
-    <script src="scripts/soldiers.js"></script>
+    <script src="scripts/simons.js"></script>
 </body>
 </html>
