@@ -100,7 +100,7 @@ function gameEngine() {
     // save new word to current game's memory / delete from main words array
     gameMemory.push(words[randomIndex]);
     words.splice(randomIndex, 1);
-    if (simon_input.value.replace(/\s/g, '') !== gameMemory.toString()) {
+    if (simon_input.value.replace(/\s/g, '').toLowerCase() !== gameMemory.toString()) {
         simon_word.textContent = 'You lose, try again!';
         simon_input.style.display = 'none';
         simon_submit.style.display = 'none';
