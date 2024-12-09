@@ -37,16 +37,38 @@ const words = [
 ];
 
 
+const timeButtons = document.getElementById("time-buttons");
 let gameMemory = [];
 let randomIndex = '';
 let interval;
+let gameDuration = 30;
 
 function getRandIndex() {
     return Math.floor(Math.random() * words.length);
 }
 
 // *** START A GAME ***
-play_btn.addEventListener('click', () => {
+
+// Set Time Of Gameplay
+timeButtons.addEventListener('click', (e) => {
+    if(e.target.type === 'button') {
+        gameDuration = e.target.id;
+        if (!e.target.classList.contains('active')) {
+            timeButtons.querySelectorAll('button').forEach((button) => {
+                if(button.classList.contains('active')) {
+                    button.classList.remove('active');
+                }
+            })
+            e.target.classList.add('active');
+        }
+        // check if game is in process
+        if (interval) {
+            startGame();
+        }
+    }
+});
+
+const startGame = () => {
     clearInterval(interval);
 
     if (words.length <= 1) {
@@ -69,9 +91,8 @@ play_btn.addEventListener('click', () => {
     simon_word.textContent = words[randomIndex];
     }, 1000)
 
-    let counter = 30;
     interval = setInterval(() => {
-        if (counter <= 0) {
+        if (gameDuration <= 0) {
             countdown.textContent = "Time's over";
             simon_input.style.display = 'none';
             simon_submit.style.display = 'none';
@@ -81,10 +102,14 @@ play_btn.addEventListener('click', () => {
             clearInterval(interval);
             countdown.textContent = "";
         } else {
-            countdown.textContent = `${counter}...`;
-            counter--;
+            countdown.textContent = `${gameDuration}...`;
+            gameDuration--;
         }
     }, 1000)
+}
+
+play_btn.addEventListener('click', () => {
+    startGame();
 })
 
 function gameEngine() {

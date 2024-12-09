@@ -162,6 +162,27 @@ main {
     width: 50%;
 }
 
+.top .time-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.time-buttons button {
+    transition: 0.2s ease;
+    flex: 1;
+}
+
+.time-buttons button:hover {
+    background: #ccc;
+}
+
+.time-buttons button.active {
+    background: #ccc;
+}
+
 .top .info {
     padding: 0;
     background-color: #ffffff;
