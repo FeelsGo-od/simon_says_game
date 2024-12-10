@@ -54,11 +54,12 @@ timeButtons.addEventListener('click', (e) => {
     if(e.target.type === 'button') {
         gameDuration = e.target.id;
         if (!e.target.classList.contains('active')) {
-            timeButtons.querySelectorAll('button').forEach((button) => {
-                if(button.classList.contains('active')) {
-                    button.classList.remove('active');
-                }
-            })
+            document.querySelector('#time-buttons .active').classList.remove('active');
+            // timeButtons.querySelectorAll('button').forEach((button) => {
+            //     if(button.classList.contains('active')) {
+            //         button.classList.remove('active');
+            //     }
+            // })
             e.target.classList.add('active');
         }
         // check if game is in process
